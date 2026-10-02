@@ -208,3 +208,11 @@ a.nav-link { cursor: pointer; }
 .hero-art img, .split-art img { width: 100%; }
 body { overflow-x: hidden; }
 @media (max-width: 860px) { .hero-art img { max-height: 300px; object-fit: contain; } }
+
+/* Video embeds */
+.video { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: #000; box-shadow: var(--shadow); }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.section-video { padding-top: 56px; }
+.demos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.demos h3 { font-size: 1rem; margin: 0.75rem 0 0; }
+.testimonial-split { align-items: stretch; }

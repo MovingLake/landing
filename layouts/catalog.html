@@ -28,5 +28,21 @@
     {{ end }}
   </div>
 </section>
+{{ with .Params.demos }}
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Watch a connector in action</h2>
+    <p class="section-sub">Short demos of real connectors syncing into real destinations.</p>
+    <div class="demos">
+      {{ range . }}
+      <div>
+        {{ partial "video.html" (dict "id" .id "title" .title) }}
+        <h3>{{ .title }}</h3>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
 {{ partial "cta.html" (dict "title" .Params.ctaTitle "text" .Params.ctaText) }}
 {{ end }}

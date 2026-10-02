@@ -20,6 +20,13 @@
   </div>
 </section>
 
+<section class="section section-video">
+  <div class="container narrow">
+    <h2 class="section-title">See MovingLake in action</h2>
+    {{ partial "video.html" (dict "id" "yPrxA8tdbHY" "title" "MovingLake Intro") }}
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
     <h2 class="section-title">The entire integration in one connector</h2>
@@ -91,10 +98,38 @@
   </div>
 </section>
 
-{{ partial "testimonials.html" (slice
-  (dict "quote" "MovingLake offers us 3 main benefits: it is now faster to get the data we need compared to when we had to develop our own data pipelines. It is now simpler to get the data everywhere we need it. And we were able to reduce our engineering resources and don't need to worry about money when maintaining or scaling our cloud infrastructure." "name" "Miguel Magos" "role" "VP of Data, Casai" "logo" "/img/casai-logo-round.png")
-  (dict "quote" "MovingLake offered all the ETLs we needed for our business at a more affordable price than the competition and on a faster refresh frequency. Using MovingLake we have been able to move twice as fast with our data stack deployments." "name" "Kevin Mendez" "role" "Data Lead, GAIA" "logo" "/img/gaia-logo-round.png")
-) }}
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Testimonials</p>
+    <h2 class="section-title">Here's what our customers say</h2>
+    <div class="split testimonial-split">
+      {{ partial "video.html" (dict "id" "zsXHC3vk3Yw" "title" "MovingLake Casai Testimonial") }}
+      <figure class="testimonial">
+        <blockquote>“MovingLake offers us 3 main benefits: it is now faster to get the data we need compared to when we had to develop our own data pipelines. It is now simpler to get the data everywhere we need it. And we were able to reduce our engineering resources and don't need to worry about money when maintaining or scaling our cloud infrastructure.”</blockquote>
+        <figcaption>
+          <img src="/img/casai-logo-round.png" alt="" width="56" height="56">
+          <div><strong>Miguel Magos</strong><span>VP of Data, Casai</span></div>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="testimonials" style="margin-top:1.5rem">
+      <figure class="testimonial">
+        <blockquote>“MovingLake offered all the ETLs we needed for our business at a more affordable price than the competition and on a faster refresh frequency. Using MovingLake we have been able to move twice as fast with our data stack deployments.”</blockquote>
+        <figcaption>
+          <img src="/img/gaia-logo-round.png" alt="" width="56" height="56">
+          <div><strong>Kevin Mendez</strong><span>Data Lead, GAIA</span></div>
+        </figcaption>
+      </figure>
+      <figure class="testimonial">
+        <blockquote>“MovingLake provided us with the exact solution we needed to push our Amazon Seller Central data into our SQL server. We're now able to pull data much quicker, which has significantly improved our workflow.”</blockquote>
+        <figcaption>
+          <img src="/img/intelligent_blends.png" alt="" width="56" height="56">
+          <div><strong>Adam Bartell</strong><span>Assistant Operations Manager, Intelligent Blends</span></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
 <section class="section section-alt">
   <div class="container pricing">
