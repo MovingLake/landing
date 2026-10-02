@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="container nav-wrap">
-    <a href="/" class="brand" aria-label="MovingLake home">
-      <img src="{{ .Site.Params.logo }}" alt="MovingLake" width="190" height="60">
+    <a href="{{ "/" | relURL }}" class="brand" aria-label="MovingLake home">
+      <img src="{{ .Site.Params.logo | relURL }}" alt="MovingLake" width="190" height="60">
     </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
     <label for="nav-toggle" class="nav-burger" aria-label="Toggle navigation"><span></span><span></span><span></span></label>
@@ -19,7 +19,7 @@
           <li><a class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}" href="{{ .URL }}">{{ .Name }}</a></li>
           {{ end }}
         {{ end }}
-        <li class="nav-cta"><a class="btn btn-primary" href="/contact-us/">Get Started</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="{{ "/contact-us/" | relURL }}">Get Started</a></li>
       </ul>
     </nav>
   </div>

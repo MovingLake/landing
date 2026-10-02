@@ -11,7 +11,7 @@
     <div class="partners">
       {{ range hugo.Data.partners }}
       <a class="partner" href="{{ .url }}" rel="noopener" target="_blank">
-        <img src="{{ .image }}" alt="{{ .name }}" loading="lazy">
+        <img src="{{ .image | relURL }}" alt="{{ .name }}" loading="lazy">
         <span>{{ .name }}</span>
       </a>
       {{ end }}
@@ -21,7 +21,7 @@
 <section class="section section-alt">
   <div class="container split">
     <div class="prose">{{ .Content }}</div>
-    <div class="split-art"><img src="/img/5904.jpg" alt="" loading="lazy"></div>
+    <div class="split-art"><img src="{{ "/img/5904.jpg" | relURL }}" alt="" loading="lazy"></div>
   </div>
 </section>
 {{ partial "cta.html" (dict "title" "Become a Partner" "text" "Reach out to our team and we'll guide you through the Official Partner Program.") }}

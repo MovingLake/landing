@@ -7,7 +7,7 @@
       <figure class="testimonial">
         <blockquote>“{{ .quote }}”</blockquote>
         <figcaption>
-          {{ with .logo }}<img src="{{ . }}" alt="" width="56" height="56">{{ end }}
+          {{ with .logo }}<img src="{{ . | relURL }}" alt="" width="56" height="56">{{ end }}
           <div><strong>{{ .name }}</strong><span>{{ .role }}</span></div>
         </figcaption>
       </figure>

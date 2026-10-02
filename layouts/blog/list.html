@@ -10,7 +10,7 @@
     <div class="post-grid">
       {{ range .Pages.ByDate.Reverse }}
       <a class="post-card" href="{{ .RelPermalink }}">
-        {{ with .Params.image }}<img src="{{ . }}" alt="" loading="lazy">{{ end }}
+        {{ with .Params.image }}<img src="{{ . | relURL }}" alt="" loading="lazy">{{ end }}
         <div class="post-card-body">
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
           <h2>{{ .Title }}</h2>

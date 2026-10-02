@@ -4,7 +4,7 @@
     <p class="eyebrow">{{ .Params.eyebrow }}</p>
     <h1>{{ .Params.headline }}</h1>
     <p class="lead">{{ .Params.tagline }}</p>
-    <a class="btn btn-primary" href="/contact-us/">Get Started</a>
+    <a class="btn btn-primary" href="{{ "/contact-us/" | relURL }}">Get Started</a>
   </div>
 </section>
 
@@ -15,10 +15,10 @@
     <div class="features">
       {{ range .Params.pillars }}
       <div class="feature">
-        <img src="{{ .icon }}" alt="" width="64" height="64">
+        <img src="{{ .icon | relURL }}" alt="" width="64" height="64">
         <h3>{{ .title }}</h3>
         <p>{{ .text }}</p>
-        {{ with .link }}<a href="{{ .url }}">{{ .label }} →</a>{{ end }}
+        {{ with .link }}<a href="{{ .url | relURL }}">{{ .label }} →</a>{{ end }}
       </div>
       {{ end }}
     </div>
@@ -32,7 +32,7 @@
   <div class="container">
     <h2 class="section-title">Trusted by key players in the {{ $.Params.industry }} industry</h2>
     <div class="logo-strip">
-      {{ range . }}<img src="{{ . }}" alt="" loading="lazy">{{ end }}
+      {{ range . }}<img src="{{ . | relURL }}" alt="" loading="lazy">{{ end }}
     </div>
   </div>
 </section>
@@ -44,10 +44,10 @@
     <div>
       <h2>{{ .title }}</h2>
       <p>{{ .text }}</p>
-      {{ with .link }}<a class="btn btn-primary" href="{{ .url }}">{{ .label }}</a>{{ end }}
+      {{ with .link }}<a class="btn btn-primary" href="{{ .url | relURL }}">{{ .label }}</a>{{ end }}
     </div>
     <div class="split-art">
-      <img src="{{ .image }}" alt="" loading="lazy">
+      <img src="{{ .image | relURL }}" alt="" loading="lazy">
     </div>
   </div>
 </section>
@@ -59,9 +59,9 @@
     <h2 class="section-title">{{ $.Params.logosTitle }}</h2>
     <p class="section-sub">{{ $.Params.logosText }}</p>
     <div class="logo-grid">
-      {{ range . }}<div class="logo-cell"><img src="{{ . }}" alt="" loading="lazy"></div>{{ end }}
+      {{ range . }}<div class="logo-cell"><img src="{{ . | relURL }}" alt="" loading="lazy"></div>{{ end }}
     </div>
-    <p class="center"><a class="btn btn-ghost" href="/realtime-connectors/">See all connectors</a></p>
+    <p class="center"><a class="btn btn-ghost" href="{{ "/realtime-connectors/" | relURL }}">See all connectors</a></p>
   </div>
 </section>
 {{ end }}
@@ -69,7 +69,7 @@
 <section class="section">
   <div class="container">
     <h2 class="section-title">The ETL process in the {{ .Params.industry }} industry</h2>
-    <img class="wide-img" src="/img/etl-process-hospitality3.png" alt="ETL process diagram" loading="lazy">
+    <img class="wide-img" src="{{ "/img/etl-process-hospitality3.png" | relURL }}" alt="ETL process diagram" loading="lazy">
   </div>
 </section>
 

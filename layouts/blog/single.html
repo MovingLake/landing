@@ -1,10 +1,10 @@
 {{ define "main" }}
 <article class="section">
   <div class="container narrow">
-    <p class="eyebrow"><a href="/blog/">← Blog</a></p>
+    <p class="eyebrow"><a href="{{ "/blog/" | relURL }}">← Blog</a></p>
     <h1 class="post-title">{{ .Title }}</h1>
     <p class="post-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time> · {{ .ReadingTime }} min read</p>
-    {{ with .Params.image }}<img class="post-hero" src="{{ . }}" alt="" loading="eager">{{ end }}
+    {{ with .Params.image }}<img class="post-hero" src="{{ . | relURL }}" alt="" loading="eager">{{ end }}
     <div class="prose">{{ .Content }}</div>
   </div>
 </article>
