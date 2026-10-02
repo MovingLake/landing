@@ -28,7 +28,7 @@ hugo server -D           # http://localhost:1313
 1. Create a GitHub repo and push this directory to the `main` branch.
 2. In the repo go to **Settings → Pages** and set **Source** to **GitHub Actions**.
 3. Push (or re-run the workflow). The site is live at `https://<user>.github.io/<repo>/` within a minute or two.
-4. Under **Settings → Pages → Custom domain** enter `www.movinglake.com` and tick **Enforce HTTPS** once the certificate is issued.
+4. Under **Settings → Pages → Custom domain** enter `movinglake.com` (GitHub then redirects `www` to it) and tick **Enforce HTTPS** once the certificate is issued.
 
 ## DNS (move away from Webflow)
 
