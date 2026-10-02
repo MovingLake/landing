@@ -1,0 +1,73 @@
+baseURL = "https://www.movinglake.com/"
+locale = "en-US"
+title = "MovingLake"
+copyright = "MovingLake"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Real-time API integrations and ETLs. ERPs, CRMs, PMS, RMS and more, synced to your databases, data warehouses and message queues in real time."
+  email = "info@movinglake.com"
+  supportEmail = "support@movinglake.com"
+  salesEmail = "andres@movinglake.com"
+  phone = "+1 415 619 7502"
+  appUrl = "https://app.movinglake.com"
+  docsUrl = "/docs/"
+  # Optional: a Formspree (or similar) endpoint. Leave empty to fall back to a mailto: form.
+  contactFormAction = ""
+  twitter = "https://twitter.com/MovingLake"
+  linkedin = "https://www.linkedin.com/company/movinglake/"
+  facebook = "https://www.facebook.com/movinglake"
+  logo = "/img/movinglakelogo-h-2.jpg"
+
+[[menus.main]]
+  name = "Industries"
+  pageRef = "/hospitality"
+  weight = 10
+  [menus.main.params]
+    dropdown = true
+[[menus.main]]
+  name = "E-Commerce"
+  pageRef = "/ecommerce"
+  parent = "Industries"
+  weight = 1
+[[menus.main]]
+  name = "Hospitality"
+  pageRef = "/hospitality"
+  parent = "Industries"
+  weight = 2
+[[menus.main]]
+  name = "Telecommunications"
+  pageRef = "/telecommunications"
+  parent = "Industries"
+  weight = 3
+[[menus.main]]
+  name = "Connectors"
+  pageRef = "/realtime-connectors"
+  weight = 20
+[[menus.main]]
+  name = "Destinations"
+  pageRef = "/destinations"
+  weight = 30
+[[menus.main]]
+  name = "Partnerships"
+  pageRef = "/partnerships"
+  weight = 40
+[[menus.main]]
+  name = "Blog"
+  pageRef = "/blog"
+  weight = 50
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    noClasses = true
+    style = "github"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[minify]
+  minifyOutput = true

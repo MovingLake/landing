@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="hero hero-industry">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="lead">{{ .Params.tagline }}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Current Official Partners</h2>
+    <div class="partners">
+      {{ range hugo.Data.partners }}
+      <a class="partner" href="{{ .url }}" rel="noopener" target="_blank">
+        <img src="{{ .image }}" alt="{{ .name }}" loading="lazy">
+        <span>{{ .name }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<section class="section section-alt">
+  <div class="container split">
+    <div class="prose">{{ .Content }}</div>
+    <div class="split-art"><img src="/img/5904.jpg" alt="" loading="lazy"></div>
+  </div>
+</section>
+{{ partial "cta.html" (dict "title" "Become a Partner" "text" "Reach out to our team and we'll guide you through the Official Partner Program.") }}
+{{ end }}

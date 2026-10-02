@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="hero hero-industry">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="lead">{{ .Params.tagline }}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    {{ .Content }}
+    {{ $items := index hugo.Data .Params.dataset }}
+    {{ if .Params.groupByCategory }}
+      {{ $cats := slice }}{{ range $items }}{{ $cats = $cats | append .category }}{{ end }}
+      {{ range $cat := ($cats | uniq | sort) }}
+        <h2 class="catalog-cat">{{ $cat }}</h2>
+        <div class="catalog">
+          {{ range where $items "category" $cat }}
+          <div class="catalog-item"><img src="{{ .image }}" alt="" loading="lazy"><span>{{ .name }}</span></div>
+          {{ end }}
+        </div>
+      {{ end }}
+    {{ else }}
+      <div class="catalog">
+        {{ range $items }}
+        <div class="catalog-item"><img src="{{ .image }}" alt="" loading="lazy"><span>{{ .name }}</span></div>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</section>
+{{ partial "cta.html" (dict "title" .Params.ctaTitle "text" .Params.ctaText) }}
+{{ end }}

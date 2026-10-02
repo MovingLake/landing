@@ -1,0 +1,51 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="{{ .Site.Params.logo }}" alt="MovingLake" width="170" height="53">
+      <p>Real-time API integrations and ETLs. A Y Combinator backed company.</p>
+      <div class="social">
+        <a href="{{ .Site.Params.twitter }}" aria-label="Twitter" rel="noopener" target="_blank"><img src="/img/twitter-small.svg" alt="" width="20" height="20"></a>
+        <a href="{{ .Site.Params.linkedin }}" aria-label="LinkedIn" rel="noopener" target="_blank"><img src="/img/linkedin-small.svg" alt="" width="20" height="20"></a>
+        <a href="{{ .Site.Params.facebook }}" aria-label="Facebook" rel="noopener" target="_blank"><img src="/img/facebook-small.svg" alt="" width="20" height="20"></a>
+      </div>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/blog/brand-launch/">About Us</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="{{ .Site.Params.docsUrl }}">Docs</a></li>
+        <li><a href="/partnerships/">Partnerships</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/realtime-connectors/">Connectors</a></li>
+        <li><a href="/destinations/">Destinations</a></li>
+        <li><a href="/hospitality/">Hospitality</a></li>
+        <li><a href="/ecommerce/">E-Commerce</a></li>
+        <li><a href="/telecommunications/">Telecommunications</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Useful Links</h4>
+      <ul>
+        <li><a href="/contact-us/">Contact</a></li>
+        <li><a href="mailto:{{ .Site.Params.supportEmail }}?subject=Website%20Help%20%26%20Support">Help &amp; Support</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in touch</h4>
+      <ul>
+        <li><a href="tel:{{ replace .Site.Params.phone " " "" }}">{{ .Site.Params.phone }}</a></li>
+        <li><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; {{ now.Year }} MovingLake</span>
+  </div>
+</footer>

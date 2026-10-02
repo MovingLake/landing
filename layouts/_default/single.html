@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container prose narrow">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="lead">{{ . }}</p>{{ end }}
+    {{ .Content }}
+  </div>
+</section>
+{{ partial "cta.html" (dict) }}
+{{ end }}

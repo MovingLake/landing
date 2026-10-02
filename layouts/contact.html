@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container contact-grid">
+    <div>
+      <h1>{{ .Title }}</h1>
+      <div class="prose">{{ .Content }}</div>
+      <ul class="contact-list">
+        <li><strong>Sales</strong> <a href="mailto:{{ .Site.Params.salesEmail }}?subject=Interested%20in%20an%20integration!">{{ .Site.Params.salesEmail }}</a></li>
+        <li><strong>General</strong> <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></li>
+        <li><strong>Support</strong> <a href="mailto:{{ .Site.Params.supportEmail }}?subject=Website%20Help%20%26%20Support">{{ .Site.Params.supportEmail }}</a></li>
+        <li><strong>Phone</strong> <a href="tel:{{ replace .Site.Params.phone " " "" }}">{{ .Site.Params.phone }}</a></li>
+      </ul>
+    </div>
+    <div class="card">
+      {{ if .Site.Params.contactFormAction }}
+      <form class="contact-form" action="{{ .Site.Params.contactFormAction }}" method="POST">
+      {{ else }}
+      <form class="contact-form" id="mailto-form" action="mailto:{{ .Site.Params.email }}" method="GET" enctype="text/plain">
+      {{ end }}
+        <label>Name <input type="text" name="name" required maxlength="256"></label>
+        <label>Email <input type="email" name="email" required maxlength="256"></label>
+        <label>Message <textarea name="message" rows="6" required maxlength="5000" placeholder="Your message here"></textarea></label>
+        <button class="btn btn-primary" type="submit">Send message</button>
+        {{ if not .Site.Params.contactFormAction }}<p class="form-note">This opens your email client with the message pre-filled.</p>{{ end }}
+      </form>
+      {{ if not .Site.Params.contactFormAction }}
+      <script>
+        document.getElementById('mailto-form').addEventListener('submit', function (e) {
+          e.preventDefault();
+          var f = e.target;
+          var subject = encodeURIComponent('Website contact from ' + f.name.value);
+          var body = encodeURIComponent(f.message.value + '\n\n— ' + f.name.value + ' <' + f.email.value + '>');
+          window.location.href = 'mailto:{{ .Site.Params.email }}?subject=' + subject + '&body=' + body;
+        });
+      </script>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

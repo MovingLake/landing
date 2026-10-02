@@ -1,0 +1,17 @@
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Testimonials</p>
+    <h2 class="section-title">Here's what our customers say</h2>
+    <div class="testimonials">
+      {{ range . }}
+      <figure class="testimonial">
+        <blockquote>“{{ .quote }}”</blockquote>
+        <figcaption>
+          {{ with .logo }}<img src="{{ . }}" alt="" width="56" height="56">{{ end }}
+          <div><strong>{{ .name }}</strong><span>{{ .role }}</span></div>
+        </figcaption>
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+</section>

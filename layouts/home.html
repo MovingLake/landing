@@ -1,0 +1,107 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Real-time data integrations</p>
+      <h1>Enterprise API Integrations</h1>
+      <p class="lead">ERPs, CRMs, PMS, RMS, *MS systems. We have the most reliable integrations in the market.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact-us/">Get Started</a>
+        <a class="btn btn-ghost" href="/realtime-connectors/">Browse connectors</a>
+      </div>
+      <div class="yc">
+        <span>The #1 real-time API integration company. Backed by</span>
+        <a href="https://ycombinator.com" rel="noopener" target="_blank"><img src="/img/ycombinator-no-whitespace.png" alt="Y Combinator" height="28"></a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="/img/api-conections.png" alt="API connections flowing into databases, warehouses and queues" width="560" height="420" loading="eager">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">The entire integration in one connector</h2>
+    <p class="section-sub">Updates flowing in real time to your backend, ERPs and CRMs, as well as to your databases, data lakes, data warehouses and message queues.</p>
+    <div class="features">
+      <div class="feature">
+        <img src="/img/wrok-icon-1.png" alt="" width="64" height="64">
+        <h3>Easy to Use</h3>
+        <p>Easy-to-follow setup guide to get your connectors up and running in little to no time.</p>
+      </div>
+      <div class="feature">
+        <img src="/img/wrok-icon-2.png" alt="" width="64" height="64">
+        <h3>Fan Out Events</h3>
+        <p>Push your data from a single platform to all of your downstream services, dependencies and data repositories.</p>
+      </div>
+      <div class="feature">
+        <img src="/img/wrok-icon-3.png" alt="" width="64" height="64">
+        <h3>Event-driven Architecture</h3>
+        <p>Natively built to support event-driven architectures. Leave the scheduler hassles to us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Always syncing</p>
+      <h2>A Sync That Never Sleeps</h2>
+      <p>MovingLake is always syncing, so there's never more than a minute or so of drift between the APIs and your databases.</p>
+      <p class="eyebrow" style="margin-top:2rem">Choose from our</p>
+      <h2>Pull-to-Push API Connectors</h2>
+      <p>Easily replay any failed or missed events. Configure back-off, jitter and dead-letter behaviors, with an optional deduplication system to avoid sending any event more than once. Get your data transformed and ready to analyze in your preferred data repositories.</p>
+      <ul class="checks">
+        <li>The #1 real-time API connector company</li>
+        <li>Enterprise API integrations</li>
+        <li>Community support</li>
+      </ul>
+    </div>
+    <div class="split-art">
+      <img src="/img/moving-lake-diagram.png" alt="MovingLake architecture diagram" width="560" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Setup in minutes</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="/img/screen-shot-2022-09-01-at-1.17.31-pm-1-.png" alt="Select the API" loading="lazy">
+        <h3>1. Select the API</h3>
+        <p>Choose the API(s) you want to integrate from our constantly expanding catalog.</p>
+        <a href="/realtime-connectors/">View sources →</a>
+      </div>
+      <div class="step">
+        <img src="/img/screen-shot-2022-09-13-at-2.34.21-pm.png" alt="Map your data" loading="lazy">
+        <h3>2. Map your data</h3>
+        <p>Select the entities or endpoints you want to sync. Webhooks are pre-configured where available, and you can override the polling frequency for any of them.</p>
+        <a href="/realtime-connectors/">View sources →</a>
+      </div>
+      <div class="step">
+        <img src="/img/screen-shot-2022-09-13-at-2.36.19-pm.png" alt="Connect your database" loading="lazy">
+        <h3>3. Connect your database</h3>
+        <p>Sync directly to your production database, or try a hosted demo database to take MovingLake for a spin.</p>
+        <a href="/destinations/">View destinations →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ partial "testimonials.html" (slice
+  (dict "quote" "MovingLake offers us 3 main benefits: it is now faster to get the data we need compared to when we had to develop our own data pipelines. It is now simpler to get the data everywhere we need it. And we were able to reduce our engineering resources and don't need to worry about money when maintaining or scaling our cloud infrastructure." "name" "Miguel Magos" "role" "VP of Data, Casai" "logo" "/img/casai-logo-round.png")
+  (dict "quote" "MovingLake offered all the ETLs we needed for our business at a more affordable price than the competition and on a faster refresh frequency. Using MovingLake we have been able to move twice as fast with our data stack deployments." "name" "Kevin Mendez" "role" "Data Lead, GAIA" "logo" "/img/gaia-logo-round.png")
+) }}
+
+<section class="section section-alt">
+  <div class="container pricing">
+    <h2>Simplified Payment</h2>
+    <p>You'll always know how much our integrations will cost you. A flat monthly fee, for the simplicity of everyone involved.</p>
+  </div>
+</section>
+
+{{ partial "cta.html" (dict) }}
+{{ end }}
